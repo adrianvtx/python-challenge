@@ -72,3 +72,19 @@ print(f"Greatest Increase in Profits: {date[(pftCh.index(max(pftCh))+1)]} ${ (bk
 print(f"Greatest Decrease in Profits: {date[(pftCh.index(min(pftCh))+1)]} ${ (bkLss)}")
 
 
+# Specify the file to write to
+output_path = os.path.join("PyBank", "Resources", "new.csv")
+
+# Open the file using "write" mode. Specify the variable to hold the contents
+with open(output_path, 'w', newline='') as csvfile:
+
+    # Initialize csv.writer
+    csvwriter = csv.writer(csvfile, delimiter=',')
+
+    csvwriter.writerow(["Financial Analysis"])
+    csvwriter.writerow(["------------------------------"])
+    csvwriter.writerow([f"Total Months: {len(date)}"])
+    csvwriter.writerow([f"Total: ${revenue}"])
+    csvwriter.writerow([f"Average Change: {round(chAvg,2)}"])
+    csvwriter.writerow([f"Greatest Increase in Profits: {date[(pftCh.index(max(pftCh))+1)]} ${ (bkPft)}"])
+    csvwriter.writerow([f"Greatest Decrease in Profits: {date[(pftCh.index(min(pftCh))+1)]} ${ (bkLss)}"])

@@ -30,7 +30,7 @@ with open(csvpath, newline='') as csvfile:
         else:
             cand[candidate] += 1
 
-print(cand.get(candidate))
+# print(cand.get(candidate)) EXTRA STUFF
         
 vMax = max(cand.keys(), key=(lambda k: cand[k]))
 vMin = min(cand.keys(), key=(lambda k: cand[k]))
@@ -48,6 +48,7 @@ print(ttlv)
 
 
     #text output
+
 print("Election Results \n------------------------------")
 print(f"Total Votes: {count} \n------------------------------")
 print(f"Winner: {vMax} \n------------------------------")
@@ -60,3 +61,11 @@ for key, value in cand.items():
     # pctv = ((value) / (vMax))
     # print(f"{key}: {round(pctV[i],3)}% ({value})")
 print(f"------------------------------\n Winner: {vMax}\n------------------------------")
+# with open('output.txt', 'w') as outfile:
+#     outfile.write(output)
+#     outfile.close()
+# print(output)
+def print_twice(*args,**kwargs):
+    print(*args,**kwargs)
+    with open('output.txt',"a") as outfile:  # appends to file and closes it when finished
+        print(file=f,*args,**kwargs)

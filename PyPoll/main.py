@@ -3,19 +3,13 @@ import os
 # Module for reading CSV files
 import csv
 # election_data.csv
-csvpath = os.path.join("PyPoll","Resources","election_data1.csv")
+csvpath = os.path.join("PyPoll","Resources","election_data.csv")
 cand = {}
-cand_nm = []
-vote = 0
-vote1 = 0
-nmvt = 0
 count = 0
-elDat = {}
-winner=str
+
 
 with open(csvpath, newline='') as csvfile:
     # CSV reader specifies delimiter and variable that holds contents
-    # elData = csv.reader(csvfile, delimiter=',')
     # Read the header row first (skip this step if there is now header)
     csv_header = next(csvfile)
     csvreader = csv.reader(csvfile)
@@ -34,11 +28,11 @@ with open(csvpath, newline='') as csvfile:
         
 vMax = max(cand.keys(), key=(lambda k: cand[k]))
 vMin = min(cand.keys(), key=(lambda k: cand[k]))
-print(vMax)
-print(vMin)
-print(cand)
-ttlv = count
-print(ttlv)
+# print(vMax)
+# print(vMin)
+# print(cand)
+# ttlv = count
+# print(ttlv)
 
 # Also Unnecessary
 # wins = list(cand)
@@ -65,7 +59,19 @@ print(f"------------------------------\n Winner: {vMax}\n-----------------------
 #     outfile.write(output)
 #     outfile.close()
 # print(output)
-def print_twice(*args,**kwargs):
-    print(*args,**kwargs)
-    with open('output.txt',"a") as outfile:  # appends to file and closes it when finished
-        print(file=f,*args,**kwargs)
+# Specify the file to write to
+output_path = os.path.join("PyPoll", "Resources", "Output.csv")
+
+# Open the file using "write" mode. Specify the variable to hold the contents
+with open(output_path, 'w', newline='') as csvfile:
+
+    # Initialize csv.writer
+    csvwriter = csv.writer(csvfile, delimiter=',')
+
+    csvwriter.writerow(["Election Results \n------------------------------"])
+    csvwriter.writerow([f"Total Votes: {count} \n------------------------------"])
+    for key, value in cand.items():
+        csvwriter.writerow([f"{key}:  {round(value/count*100,3)}%   ({value})"])
+    csvwriter.writerow([f"------------------------------\n Winner: {vMax}\n------------------------------"])
+
+

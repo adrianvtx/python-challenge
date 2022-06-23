@@ -2,7 +2,7 @@
 
 ## This Repo contains three Python projects using Pandas and Jupyter notebook; output below
 
-### "PyPoll"
+## "PyPoll"
 
 Election Results
 
@@ -22,7 +22,7 @@ O'Tooley: 3.000% (105630)
 
 Winner: Khan
 
-### "PyBank"
+## "PyBank"
 
 Financial Analysis
 
@@ -38,6 +38,6 @@ Greatest Increase in Profits: Feb-2012 $1926159
 
 Greatest Decrease in Profits: Sep-2013 $-2196167
 
-### "Academy_of_Py"
+## "Academy_of_Py"
 
 D:\GIT_AV_REPOS\python-challenge\PyCitySchoolsAnalysis_Vojvodic.html

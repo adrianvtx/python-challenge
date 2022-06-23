@@ -1,4 +1,10 @@
 # python-challenge
+This Repo contains three Python, Pandas, and Jupyter notebook projects:
+"PyPoll"
+"Academy_of_Py"
+"PyBank"
+
+
   ```text
   Election Results
   -------------------------

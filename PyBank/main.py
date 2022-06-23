@@ -32,7 +32,7 @@ import os
 # Module for reading CSV files
 import csv
 
-csvpath = os.path.join("PyBank","Resources","budget_data.csv")
+csvpath = os.path.join("Resources","budget_data.csv")
 date = []
 revenue = 0
 coInfo = []
@@ -73,7 +73,7 @@ print(f"Greatest Decrease in Profits: {date[(pftCh.index(min(pftCh))+1)]} ${ (bk
 
 
 # Specify the file to write to
-output_path = os.path.join("PyBank", "Resources", "new.csv")
+output_path = os.path.join("Results", "Financial_Analysis.csv")
 
 # Open the file using "write" mode. Specify the variable to hold the contents
 with open(output_path, 'w', newline='') as csvfile:

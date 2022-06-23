@@ -3,10 +3,10 @@ import os
 # Module for reading CSV files
 import csv
 # election_data.csv
-csvpath = os.path.join("PyPoll","Resources","election_data.csv")
+csvpath = os.path.join("Resources","election_data.csv")
 cand = {}
 count = 0
-
+# python-challenge\PyPoll\Resources\election_data.csv    "PyPoll",
 
 with open(csvpath, newline='') as csvfile:
     # CSV reader specifies delimiter and variable that holds contents
@@ -60,7 +60,7 @@ print(f"------------------------------\n Winner: {vMax}\n-----------------------
 #     outfile.close()
 # print(output)
 # Specify the file to write to
-output_path = os.path.join("PyPoll", "Resources", "Output.csv")
+output_path = os.path.join("Results", "Election_Results.csv")
 
 # Open the file using "write" mode. Specify the variable to hold the contents
 with open(output_path, 'w', newline='') as csvfile:
